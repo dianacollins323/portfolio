@@ -1,0 +1,181 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background: #222;
+	overflow-x: hidden;
+
+}
+
+header {
+	background: #0BE2FD url(images/sea2.jpg) repeat-x;
+	-webkit-animation: move-sea-floor 15s infinite linear;
+	-moz-animation: move-sea-floor 15s infinite linear;
+	height: 300px;
+	position: relative;
+	border-top: 10px solid #0BE2FD;
+	border-bottom: 10px solid #0BE2FD;
+}
+
+p {
+	color: #e9e9e9;
+	margin: 20px;
+}
+
+#mermaid {
+	width: 454px;
+	height: 170px;
+	position: absolute;
+	top: 100px;
+	left: -1000px;
+	z-index: 2;
+	-webkit-animation: 
+		swimming 25s 1s linear,
+		show-yourself 1s 1;
+	-moz-animation: 
+		swimming 25s 1s linear,
+		show-yourself 1s 1;
+}
+
+#shark {
+	width: 454px;
+	height: 170px;
+	position: absolute;
+	top: 70px;
+	left: -1000px;
+	z-index: 3;
+	-webkit-animation: 
+		swimming 15s 12.5s linear,
+		show-yourself 12.5s 1;
+	-moz-animation: 
+		swimming 15s 12.5s linear,
+		show-yourself 12.5s 1;
+}
+
+#blood {
+	width: 1000px;
+	height: 170px;
+	position: absolute;
+	top: 70px;
+	left: 1500px;
+	z-index: 3;
+	-webkit-animation: blood-flow 30s 23s linear;
+	-moz-animation: blood-flow 30s 23s linear;
+}
+
+#blood2 {
+	width: 1000px;
+	height: 170px;
+	position: absolute;
+	top: 0px;
+	left: 1500px;
+	z-index: 3;
+	-webkit-animation: blood-flow 30s 25s linear;
+	-moz-animation: blood-flow 30s 25s linear;
+}
+
+#blood3 {
+	width: 1000px;
+	height: 170px;
+	position: absolute;
+	bottom: 0px;
+	left: 1500px;
+	z-index: 3;
+	-webkit-animation: blood-flow 30s 27s linear;
+	-moz-animation: blood-flow 30s 27s linear;
+}
+
+#fin {
+	position: absolute;
+	top: 100px;
+	left: 1500px;
+	z-index: 2;
+	-webkit-animation:
+		blood-flow 30s 27s linear,
+		spinning 10s 27s infinite;
+	-moz-animation:
+		blood-flow 30s 27s linear,
+		spinning 10s 27s infinite;
+}
+
+#arm {
+	position: absolute;
+	top: 130px;
+	left: 1500px;
+	z-index: 2;
+	-webkit-animation:
+		blood-flow 30s 29s linear,
+		spinning 10s 29s infinite;
+	-moz-animation:
+		blood-flow 30s 29s linear,
+		spinning 10s 29s infinite;
+}
+
+#head {
+	position: absolute;
+	top: 150px;
+	left: 1500px;
+	z-index: 2;
+	-webkit-animation:
+		blood-flow 30s 33s linear,
+		spinning 10s 33s infinite;
+	-moz-animation:
+		blood-flow 30s 33s linear,
+		spinning 10s 33s infinite;
+}
+
+/* 
+	Animation Definitions 
+*/
+
+@-webkit-keyframes move-sea-floor {
+	from { background-position: 0 -50px; }
+	to   { background-position: -1800px -50px; }
+}
+
+@-moz-keyframes move-sea-floor {
+	from { background-position: 0 -50px; }
+	to   { background-position: -1800px -50px; }
+}
+
+@-webkit-keyframes swimming {
+	from { left: -500px; }
+	to   { left: 1500px; }
+}
+
+@-moz-keyframes swimming {
+	from { left: -500px; }
+	to   { left: 1500px; }
+}
+
+@-webkit-keyframes show-yourself {
+	from { left: -1000px; }
+	to   { left: -500px }
+}
+
+@-moz-keyframes show-yourself {
+	from { left: -1000px; }
+	to   { left: -500px }
+}
+
+@-webkit-keyframes blood-flow {
+	from { left: 1500px; }
+	to   { left: -1500px; }
+}
+
+@-moz-keyframes blood-flow {
+	from { left: 1500px; }
+	to   { left: -1500px; }
+}
+
+@-webkit-keyframes spinning {
+	from { -webkit-transform: rotate(360deg); }
+	to   { -webkit-transform: rotate(0deg); }
+}
+
+@-moz-keyframes spinning {
+	from { -moz-transform: rotate(360deg); }
+	to   { -moz-transform: rotate(0deg); }
+}

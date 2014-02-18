@@ -1,0 +1,119 @@
+@font-face {
+    font-family: myBrandFont;
+    src: url(StymieStylus.otf);
+}
+
+body {
+    font-family: Verdana;
+    font-weight: lighter;
+}
+
+.container div {
+    border-bottom: none;
+}
+
+.sunset {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#wrap > .home {
+  padding: 10px 15px 0;
+  margin-bottom: 30px;
+}
+
+h1 .page-header {
+    border-bottom: none;
+}
+
+h1 .first-header .page-header {
+  font-size: 300%;
+}
+
+.navbar-brand {
+    font-family: myBrandFont;
+    font-size: 250%;
+    color: #555555;
+}
+
+.navbar-default {
+    background-color: rgba(0,0,0,.7);
+}
+
+.page-header {
+    font-family: georgia;
+    font-size: 150%;
+}
+
+/*contact page style*/
+.form {
+    border-bottom: 1px solid #dddddd;
+}
+
+.last {
+    border-bottom: none;
+}
+
+.entries {
+    padding: 0;
+}
+
+label {
+    font-family: Verdana;
+    font-weight: lighter;
+    display: block;
+    vertical-align: top;
+}
+
+.formDiv {
+    width: 350px;
+    padding: 10px;
+}
+
+.error {
+    border-color: red;
+    color: red;
+}
+
+/*portfolio page style*/
+.h-3 {
+    color: #555555;
+}
+
+.gallery li {
+    display: inline;
+}
+
+.gallery {
+    list-style:none;
+    padding-left:0;
+}
+
+.internetApps {
+    list-style:none;
+    padding-left:0;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
+.expand a:link {
+    text-decoration: none;
+}
+
+.expand a:visited {
+    text-decoration: none;
+}
+
+.expand a:hover {
+    text-decoration: underline;
+    color: #aabbbb;
+}
+
+@media (min-width: 430px) {
+    .form-control {
+        width: 400px;
+    }
+}

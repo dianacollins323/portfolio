@@ -34,7 +34,7 @@ h1 .page-header {
 }
 
 .navbar-default {
-    background-color: rgba(0,0,0,.4);
+    background-color: rgba(0,0,0,.7);
 }
 
 .page-header {
@@ -68,6 +68,7 @@ label {
 }
 
 .error {
+    border-color: red;
     color: red;
 }
 

@@ -4420,7 +4420,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #dddddd;
+  background-color: #444;
 }
 
 .navbar-default .navbar-toggle .icon-bar {

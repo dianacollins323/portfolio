@@ -1,5 +1,7 @@
 <?php
     if (isset($_POST['submit'])) {
+        $trimEmail = trim($_POST['email']);
+        $email = urldecode($trimEmail);
 
         if (trim($_POST['name'] == '')) {
             $errors[] = 'Please enter your name.';
@@ -8,11 +10,8 @@
             $name = trim($_POST['name']);
         }
 
-        if (trim($_POST['email'] == '') || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        if ($email == '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'Please enter a valid email address.';
-        } 
-        else {
-            $email = trim($_POST['email']);
         }
 
         if (trim($_POST['subject'] == '')) {
@@ -29,12 +28,11 @@
             $message = trim($_POST['message']);
         }
 
+        header('Content-type: application/json');
+        $response = array();
         if (count($errors) > 0) {
-            echo "<html><head></head><body>";
-            for ($i = 0; $i < count($errors); $i++) {
-                echo "<h3 class=\"h-3\">$errors[$i]</h3>";
-            }
-            echo "</body></html>";
+            $response['response'] = 'error';
+            $response['errors'] = $errors;
         }
         else{
             $emailto = 'dianacollins323@gmail.com';
@@ -42,10 +40,8 @@
             $headers = 'From: Diana Collins<'.$emailto.'>' . "\r\n" . 'Reply-To: ' .$email . "\r\n" . 'X-Mailer: PHP/' . phpversion();
             @mail($emailto, $body, $headers);
             $emailSent = true;
-            //echo "Your message has been sent. <br>";
-            //echo "Thank you, $name, for your email. <br>";
-            //echo "<a href='../contact.html'>Back to Contact Form</a>";
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            $response['response'] = 'ok';
         }
+        echo json_encode($response);
     }
 ?>

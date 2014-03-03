@@ -23,12 +23,26 @@ body {
   margin-bottom: 30px;
 }
 
-h1 .page-header {
-    border-bottom: none;
+.page-header {
+    margin-top: 50px;
+    font-family: georgia;
+    font-size: 150%;
 }
 
 h1 .first-header .page-header {
-  font-size: 300%;
+    margin-top: 20px;
+}
+
+.resume-name {
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: 200%;
+}
+
+h4 {
+    font-family: Verdana;
+    font-weight: bold;
+    padding-top: 20px;
 }
 
 .navbar-brand {
@@ -39,11 +53,6 @@ h1 .first-header .page-header {
 
 .navbar-default {
     background-color: rgba(0,0,0,.7);
-}
-
-.page-header {
-    font-family: georgia;
-    font-size: 150%;
 }
 
 /*contact page style*/
@@ -79,6 +88,13 @@ label {
 /*portfolio page style*/
 .h-3 {
     color: #555555;
+    font-weight: bold;
+}
+
+.content-header {
+    color: #555555;
+    font-family: georgia;
+    font-size: 125%;
 }
 
 .gallery li {

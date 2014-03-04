@@ -5,6 +5,7 @@ $( document ).ready(function() {
             var serialized = $(form).serialize();
             var keyValuePairs = serialized.split('&');
             var formData = {};
+            document.getElementById("submit").style.visibility = "hidden";
             $.each(keyValuePairs, function(index, value) {
                 //formData[key] = value
                 var holder = value.split('=');
@@ -22,19 +23,31 @@ $( document ).ready(function() {
                 if (r.response == 'ok') {
                     alert("Your message has been sent.");
                     $("#contactForm")[0].reset();
+                    document.getElementById("submit").style.visibility = "visible";
                 }
                 else {
                     $.each(r.errors, function(index, value) {
                         $('#formErrors').append($('<li class="error">' + value + '</li>'));
+                        document.getElementById("submit").style.visibility = "visible";
                     });
                 }
             })
             .fail(function(jqXHR, textStatus, error) {
                 console.log(error);
                 alert("There was an error sending your message. Please try again.");
+                document.getElementById("submit").style.visibility = "visible";
             });
         }
     });
+
+    //hide contact form submit button
+    //$("#submit").click(function() {
+    //    document.getElementById("submit").style.visibility = "hidden";
+    //})
+    //document.getElementById('submit').addEventListener("click", hideButton(), false);
+    //function hideButton() {
+    //    $('#submit').style.visibility = "hidden";
+    //}
 
     //animated scroll to elements on page
     $("#indexLink").click(function() {

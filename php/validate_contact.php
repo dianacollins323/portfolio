@@ -36,7 +36,7 @@
         }
         else{
             $emailto = 'dianacollins323@gmail.com';
-            $body = 'Name: $name <br> Email: $email <br> Subject: $subject <br> Message: $message';
+            $body = 'Name: ' . $name . "\r\n" . 'Email: ' . $email . "\r\n" . 'Subject: ' . $subject . "\r\n" . 'Message: ' . $message;
             $headers = 'From: Diana Collins<'.$emailto.'>' . "\r\n" . 'Reply-To: ' .$email . "\r\n" . 'X-Mailer: PHP/' . phpversion();
             @mail($emailto, $body, $headers);
             $emailSent = true;

@@ -40,15 +40,6 @@ $( document ).ready(function() {
         }
     });
 
-    //hide contact form submit button
-    //$("#submit").click(function() {
-    //    document.getElementById("submit").style.visibility = "hidden";
-    //})
-    //document.getElementById('submit').addEventListener("click", hideButton(), false);
-    //function hideButton() {
-    //    $('#submit').style.visibility = "hidden";
-    //}
-
     //animated scroll to elements on page
     $("#indexLink").click(function() {
         target = $("#index");

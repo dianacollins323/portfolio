@@ -35,10 +35,13 @@
             $response['errors'] = $errors;
         }
         else{
+            $nameOut = str_replace("+", " ", $name);
+            $subjectOut = str_replace("+", " ", $subject);
+            $messageOut = str_replace("+", " ", $message);
             $emailto = 'dianacollins323@gmail.com';
-            $body = 'Name: ' . $name . "\r\n" . 'Email: ' . $email . "\r\n" . 'Subject: ' . $subject . "\r\n" . 'Message: ' . $message;
-            $headers = 'From: Diana Collins<'.$emailto.'>' . "\r\n" . 'Reply-To: ' .$email . "\r\n" . 'X-Mailer: PHP/' . phpversion();
-            @mail($emailto, $body, $headers);
+            $header = "Message from diana.franticpedantic.com";
+            $body = 'Name: ' . $nameOut . "\r\n" . 'Subject: ' . $subjectOut . "\r\n" . 'Message: ' . $messageOut . "\r\n" . 'Reply-To: ' . $nameOut . " ".$email;
+            @mail($emailto, $header, $body);
             $emailSent = true;
             $response['response'] = 'ok';
         }
